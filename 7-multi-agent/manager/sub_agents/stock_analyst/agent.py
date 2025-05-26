@@ -35,6 +35,7 @@ def get_stock_price(ticker: str) -> dict:
             "error_message": f"Error fetching stock data: {str(e)}",
         }
 
+# Description for the subagents are important as the root agent uses it to make a decision
 
 # Create the root agent
 stock_analyst = Agent(

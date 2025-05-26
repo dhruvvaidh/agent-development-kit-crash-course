@@ -75,5 +75,6 @@ def exit_loop(tool_context: ToolContext) -> Dict[str, Any]:
     print("Loop will exit now")
     print("------------------------------------------\n")
 
+    # Exits the loop
     tool_context.actions.escalate = True
     return {}

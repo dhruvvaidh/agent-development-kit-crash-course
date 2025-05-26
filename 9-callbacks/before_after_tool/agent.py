@@ -44,6 +44,9 @@ def get_capital_city(country: str) -> Dict[str, str]:
 
     return {"result": result}
 
+# Purpose: Allows inspection and modification of tool arguments,
+# performing authorization checks before execution, logging tool
+# usage attempts, or implementing tool-level caching.
 
 # --- Define Before Tool Callback ---
 def before_tool_callback(
@@ -74,6 +77,10 @@ def before_tool_callback(
     print("[Callback] Proceeding with normal tool call")
     return None
 
+# Purpose: Allows inspection and modification of the tool's result
+# before it's sent back to the LLM (potentially after summarization).
+# Useful for logging tool results, post-processing or formatting results,
+# or saving specific parts of the result to the session state.
 
 # --- Define After Tool Callback ---
 def after_tool_callback(

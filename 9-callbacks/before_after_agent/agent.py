@@ -13,6 +13,9 @@ from google.adk.agents.callback_context import CallbackContext
 from google.genai import types
 
 
+# This is triggered before Agent starts executing therefore, 
+# making it ideal for performing additonal setup steps before 
+# the model starts executing 
 def before_agent_callback(callback_context: CallbackContext) -> Optional[types.Content]:
     """
     Simple callback that logs when the agent starts processing a request.
@@ -52,7 +55,8 @@ def before_agent_callback(callback_context: CallbackContext) -> Optional[types.C
 
     return None
 
-
+# This is triggered after the Agent is done executing therefore, 
+# making it ideal for cleanup tasks, post-processing of output, updating the states etc.
 def after_agent_callback(callback_context: CallbackContext) -> Optional[types.Content]:
     """
     Simple callback that logs when the agent finishes processing a request.

@@ -14,7 +14,7 @@ from google.adk.agents.callback_context import CallbackContext
 from google.adk.models import LlmRequest, LlmResponse
 from google.genai import types
 
-
+# Called before the request is sent to the LLM, mostly used for content moderation
 def before_model_callback(
     callback_context: CallbackContext, llm_request: LlmRequest
 ) -> Optional[LlmResponse]:
@@ -81,7 +81,8 @@ def before_model_callback(
     # Return None to proceed with normal model request
     return None
 
-
+# Called after the model has given an answer, used for post processing the model response,
+# remove information I don't want to provide further.
 def after_model_callback(
     callback_context: CallbackContext, llm_response: LlmResponse
 ) -> Optional[LlmResponse]:

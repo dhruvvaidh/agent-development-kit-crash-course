@@ -11,6 +11,8 @@ from .subagents.post_generator import initial_post_generator
 from .subagents.post_refiner import post_refiner
 from .subagents.post_reviewer import post_reviewer
 
+# The agents exits the loop if it is completing a condition or it reaches it's max iterations
+
 # Create the Refinement Loop Agent
 refinement_loop = LoopAgent(
     name="PostRefinementLoop",

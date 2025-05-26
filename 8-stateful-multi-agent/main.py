@@ -17,7 +17,7 @@ session_service = InMemorySessionService()
 # ===== PART 2: Define Initial State =====
 # This will be used when creating a new session
 initial_state = {
-    "user_name": "Brandon Hancock",
+    "user_name": "Dhruv Vaidh",
     "purchased_courses": [],
     "interaction_history": [],
 }
@@ -26,7 +26,7 @@ initial_state = {
 async def main_async():
     # Setup constants
     APP_NAME = "Customer Support"
-    USER_ID = "aiwithbrandon"
+    USER_ID = "dhruvvaidh139"
 
     # ===== PART 3: Session Creation =====
     # Create a new session with initial state

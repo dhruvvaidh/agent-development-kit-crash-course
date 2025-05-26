@@ -6,6 +6,14 @@ from .sub_agents.news_analyst.agent import news_analyst
 from .sub_agents.stock_analyst.agent import stock_analyst
 from .tools.tools import get_current_time
 
+
+# The manager Agent basically reads through the descriptions of all the other agents 
+# to figure out which one should be selected to perform the Task
+
+# Agents in ADK work in a different way, instead of using multiple agents to do one task, 
+# it focuses on delegating the task to the best agent possible. 
+# There are workarounds to this for adding complex workflows like parallel, sequential and loops.
+
 root_agent = Agent(
     name="manager",
     model="gemini-2.0-flash",
@@ -30,3 +38,14 @@ root_agent = Agent(
         get_current_time,
     ],
 )
+
+# We cannot use subagents with built-in tools with the root agent. 
+# Therefore, we have to use AgentTool class to use the Sub agent as a tool call for thr root agent
+
+# Agent-as-a-Tool: When Agent A calls Agent B as a tool (using Agent-as-a-Tool),
+# Agent B's answer is passed back to Agent A, which then summarizes the answer
+# and generates a response to the user. Agent A retains control and continues
+# to handle future user input.
+
+# We should add the following to the subagent instructions for better performance. 
+# "If you are not able to fulfill the request by user, delegate it to the root agent"

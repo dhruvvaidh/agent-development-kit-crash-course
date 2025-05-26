@@ -13,6 +13,8 @@ from .subagents.scorer import lead_scorer_agent
 # Import the subagents
 from .subagents.validator import lead_validator_agent
 
+# In sequential agents, the order sub-agents in the list is the order of execution of these sub-agents
+
 # Create the sequential agent with minimal callback
 root_agent = SequentialAgent(
     name="LeadQualificationPipeline",
