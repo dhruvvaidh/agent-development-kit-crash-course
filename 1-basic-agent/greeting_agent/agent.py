@@ -1,5 +1,9 @@
 from google.adk.agents import Agent
 
+
+# We need to have a root agent, as it serves as the entry point to the application
+# We need to ensure that the root agent name is same as the directory name
+
 root_agent = Agent(
     name="greeting_agent",
     # https://ai.google.dev/gemini-api/docs/models

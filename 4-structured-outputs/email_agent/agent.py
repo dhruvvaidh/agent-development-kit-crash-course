@@ -1,6 +1,8 @@
 from google.adk.agents import LlmAgent
 from pydantic import BaseModel, Field
 
+# Input schema is pretty rigid and we will have problems while using it
+# We cannot use output schema when we're sending the output to another tool or agent
 
 # --- Define Output Schema ---
 class EmailContent(BaseModel):
@@ -11,6 +13,8 @@ class EmailContent(BaseModel):
         description="The main content of the email. Should be well-formatted with proper greeting, paragraphs, and signature."
     )
 
+# Despite creating the EmailContent class (output schema), we will have to explicitly 
+# define the schema in the instructions
 
 # --- Create Email Generator Agent ---
 root_agent = LlmAgent(

@@ -5,11 +5,20 @@ from google.adk.agents import Agent
 from google.adk.models.lite_llm import LiteLlm
 
 # https://docs.litellm.ai/docs/providers/openrouter
-model = LiteLlm(
-    model="openrouter/openai/gpt-4.1",
-    api_key=os.getenv("OPENROUTER_API_KEY"),
-)
 
+# LiteLLM allows us to use any LLM anywhere seamlessly
+# OpenRouter allows us to purchase tokens for LLMs, 
+# Previously we had to sign up for every provider, load their account with money 
+# and then use their API Key, now not anymore
+# model = LiteLlm(
+#     model="openrouter/openai/gpt-4.1",
+#     api_key=os.getenv("OPENROUTER_API_KEY"),
+# )
+
+model = LiteLlm(
+    model="openai/gpt-4o",
+    api_key=os.getenv("OPENAI_API_KEY"),
+)
 
 def get_dad_joke():
     jokes = [

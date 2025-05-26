@@ -129,7 +129,7 @@ async def call_agent_async(runner, user_id, session_id, query):
         session_id,
         "State BEFORE processing",
     )
-
+    # Google recommends us to use async implementations for real-world application and simple methods when testing locally for optimum performance
     try:
         async for event in runner.run_async(
             user_id=user_id, session_id=session_id, new_message=content

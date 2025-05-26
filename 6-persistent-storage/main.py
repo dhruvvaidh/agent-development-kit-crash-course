@@ -9,7 +9,7 @@ from utils import call_agent_async
 load_dotenv()
 
 # ===== PART 1: Initialize Persistent Session Service =====
-# Using SQLite database for persistent storage
+# Using SQLite database for persistent storage (Can be replaced with Cloud hosted DBs)
 db_url = "sqlite:///./my_agent_data.db"
 session_service = DatabaseSessionService(db_url=db_url)
 
@@ -17,7 +17,7 @@ session_service = DatabaseSessionService(db_url=db_url)
 # ===== PART 2: Define Initial State =====
 # This will only be used when creating a new session
 initial_state = {
-    "user_name": "Brandon Hancock",
+    "user_name": "Dhruv Vaidh",
     "reminders": [],
 }
 
